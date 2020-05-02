@@ -1,2 +1,2 @@
 # May-LeetCoding-Challenge
-30 day LeetCode Challenge May
+30 day May LeetCode Challenge 
