@@ -75,4 +75,42 @@ static auto fast_io = []()
 	std::cout.tie(nullptr);
 	return 0;
 }();
+/* Solution 2
 
+class Solution {
+public:
+    int xdepth,ydepth;
+    TreeNode* xparent = NULL;
+    TreeNode* yparent = NULL;
+    
+    void checkIsCousins(TreeNode* root, int x,int y, int depth, TreeNode* parent){
+        if(!root) return;
+        depth++;
+        if(root->val == x)
+        {
+            xdepth = depth;
+            xparent = parent;
+        }
+        if(root->val == y){
+            ydepth = depth;
+            yparent = parent;
+        }
+        checkIsCousins(root->left,x,y,depth,root);
+        checkIsCousins(root->right,x,y,depth,root);
+        return;
+    }
+    
+    bool isCousins(TreeNode* root, int x, int y) {
+        if (root == NULL) 
+            return false;  
+        checkIsCousins(root,x,y,0,NULL);
+        
+        if(xdepth != ydepth || xparent == yparent) 
+            return false;
+        return true;
+    }
+};
+
+
+
+*/
